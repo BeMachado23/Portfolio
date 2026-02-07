@@ -1,26 +1,294 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
+.text-stroke-purple {
+  -webkit-text-stroke: 1px #966DCE; 
+  color: transparent;
+}
+
+.text-stroke-purple-filled {
+  -webkit-text-stroke: 1px #966DCE;
+  color: #1D1F1C;
+}
+
+.text-stroke-black {
+  text-shadow: 
+    -1px -1px 0 #000,
+    0px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    -1px 1px 0 #000,
+    0px 1px 0 #000,
+    1px 1px 0 #000,
+    0px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.text-shadow-white {
+  text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.text-outline-purple-solid {
+  color: #1D1F1C;
+  text-shadow:
+    -1px -1px 0 #966DCE,
+     0px -1px 0 #966DCE,
+     1px -1px 0 #966DCE,
+    -1px  0px 0 #966DCE,
+     1px  0px 0 #966DCE,
+    -1px  1px 0 #966DCE,
+     0px  1px 0 #966DCE,
+     1px  1px 0 #966DCE;
+}
+
+/* Animações de reveal para o texto */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.animate-slide-in-1 {
+  animation: slideIn 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-2 {
+  animation: slideIn 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-3 {
+  animation: slideIn 0.6s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+/* Simple fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Animação fade-in com scale para imagem */
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-scale {
+  animation: fadeScale 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Fade com blur (efeito "foco") */
+@keyframes fadeBlur {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-fade-blur {
+  animation: fadeBlur 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Animação da seta: entra de baixo e depois fica flutuando */
+@keyframes arrowFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes arrowEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-arrow-entrance {
+  animation: arrowEnter 0.8s ease-out 1s forwards, arrowFloat 2s ease-in-out 2s infinite;
+  opacity: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+/* Card entrance animations with staggered delays */
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card-1 { animation: cardReveal 0.5s ease-out 0.1s forwards; opacity: 0; }
+.animate-card-2 { animation: cardReveal 0.5s ease-out 0.2s forwards; opacity: 0; }
+.animate-card-3 { animation: cardReveal 0.5s ease-out 0.3s forwards; opacity: 0; }
+.animate-card-4 { animation: cardReveal 0.5s ease-out 0.4s forwards; opacity: 0; }
+.animate-card-5 { animation: cardReveal 0.5s ease-out 0.5s forwards; opacity: 0; }
+.animate-card-6 { animation: cardReveal 0.5s ease-out 0.6s forwards; opacity: 0; }
+.animate-card-7 { animation: cardReveal 0.5s ease-out 0.7s forwards; opacity: 0; }
+.animate-card-8 { animation: cardReveal 0.5s ease-out 0.8s forwards; opacity: 0; }
+.animate-card-9 { animation: cardReveal 0.5s ease-out 0.9s forwards; opacity: 0; }
+.animate-card-10 { animation: cardReveal 0.5s ease-out 1.0s forwards; opacity: 0; }
+.animate-card-11 { animation: cardReveal 0.5s ease-out 1.1s forwards; opacity: 0; }
+.animate-card-12 { animation: cardReveal 0.5s ease-out 1.2s forwards; opacity: 0; }
+
+/* Modal animations */
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-modal-backdrop {
+  animation: modalFadeIn 0.25s ease-out forwards;
+}
+
+.animate-modal-content {
+  animation: modalScaleIn 0.3s ease-out forwards;
+}
+
+/* Modal exit animations */
+@keyframes modalFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes modalScaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-modal-backdrop-out {
+  animation: modalFadeOut 0.3s ease-in forwards;
+}
+
+.animate-modal-content-out {
+  animation: modalScaleOut 0.3s ease-in forwards;
+}
+
+/* Slide from right animation */
+@keyframes slideFromRightSmooth {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-from-right {
+  animation: slideFromRightSmooth 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Slide from bottom animation */
+@keyframes slideFromBottomSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-from-bottom {
+  animation: slideFromBottomSmooth 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
