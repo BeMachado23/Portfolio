@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bernardo Machado - Digital Solutions Developer Portfolio
 
-## Getting Started
+![Project Status](https://img.shields.io/badge/status-active-success)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)
 
-First, run the development server:
+> **Um portfólio imersivo e interativo.** Este projeto foi desenvolvido para demonstrar minhas habilidades em Engenharia de Software Full Stack, UI/UX Design.
+
+## 🎨 Conceito & Design
+
+O design segue uma estética **"Dark/Glitch/Grega"**, refletindo a técnica do desenvolvimento de software moderno.
+
+* **Identidade Visual:** Fundo preto profundo, acentos em Roxo Neon (`#966DCE`) e tipografia moderna.
+* **Navegação:** Recomendo a utilização da Navbar para criar uma experiência de "apresentação de slides" fluida e magnética entre as seções.
+* **Animações:** Integração de **Framer Motion** e **React Bits** para revelar textos ("Decrypted Text") e transições suaves.
+
+---
+
+## 🛠 Tech Stack (Portfólio)
+
+A arquitetura deste site foi pensada para performance e escalabilidade modular.
+
+* **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/) + `clsx` + `tailwind-merge`
+* **Animações:** [Framer Motion](https://www.framer.com/motion/)
+* **Ícones:** [Lucide React](https://lucide.dev/)
+
+---
+
+## ⚡ Funcionalidades do Site
+
+### 🔒 Tela "Start" (Lock Screen)
+A primeira seção funciona como uma capa. O scroll é inicialmente travado (`overflow-hidden`). O usuário deve interagir (clicar em "Start") para desbloquear a navegação, garantindo que a introdução seja vista por completo.
+
+### 🧩 Grid de Showcase Modular
+O componente de projetos utiliza um sistema de **Abas (Tabs)** gerenciado por estado (`useState`).
+* **Aba Projects:** Grid 3 colunas (Cards com imagem e descrição).
+* **Aba Certificates:** Grid 3 colunas (Layout adaptado para diplomas).
+* **Aba Tech Stack:** Grid 6 colunas (Cards menores focados em ícones).
+
+---
+
+## 🏃‍♂️ Como Rodar Localmente
+
+Clone o repositório e instale as dependências para ver o projeto em ação.
 
 ```bash
+# 1. Clone o repositório
+git clone [https://github.com/seu-usuario/seu-portfolio.git](https://github.com/seu-usuario/seu-portfolio.git)
+
+# 2. Entre na pasta
+cd seu-portfolio
+
+# 3. Instale as dependências
+npm install
+# ou
+yarn install
+
+# 4. Rode o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 5. Acesse http://localhost:3000
