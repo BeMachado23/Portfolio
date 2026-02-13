@@ -39,28 +39,43 @@ export default function About(){
         <section
             id="about"
             ref={sectionRef}
-            className="relative w-full h-screen overflow-hidden"
+            className="relative w-full min-h-screen overflow-hidden py-16 lg:py-0 lg:h-screen"
         >
-            <div className='absolute left-15 top-20 z-30'>
-            {/* Header - About label */}
-            <div className={`absolute top-20 left-9 md:left-14 z-30 flex items-center gap-4 ${nameVisible ? 'animate-slide-in-1' : ''}`}>
-                <h2 className="text-neutral-500 text-xl md:text-4xl font-bold tracking-wider">About</h2>
-                <div className="h-0.5 w-24 bg-neutral-600"></div>
+            {/* Mobile: Layout em coluna / Desktop: Layout absoluto original */}
+            <div className="relative z-30 flex flex-col items-center px-4 lg:block lg:px-0">
+                
+                {/* Header - About label */}
+                <div className={`flex items-center gap-3 mb-6 self-start ml-4 sm:ml-8 lg:absolute lg:top-20 lg:left-14 lg:gap-4 lg:mb-0 lg:ml-0 ${nameVisible ? 'animate-slide-in-1' : ''}`}>
+                    <h2 className="text-neutral-500 text-lg font-bold tracking-wider sm:text-xl md:text-4xl">About</h2>
+                    <div className="h-0.5 w-16 bg-neutral-600 sm:w-20 md:w-24"></div>
+                </div>
+
+                {/* Title BERNARDO MACHADO - Mobile: centralizado / Desktop: esquerda */}
+                <div className={`text-center mb-6 lg:absolute lg:top-40 lg:left-12 lg:text-left lg:mb-0 ${nameVisible ? 'animate-slide-in-2' : ''}`}>
+                    <h1 className="text-white text-2xl font-bold italic tracking-tighter leading-tight select-none sm:text-3xl md:text-4xl lg:text-5xl">
+                        BERNARDO
+                        <br />
+                        MACHADO
+                    </h1>
+                </div>
             </div>
 
-            {/* Left - Title BERNARDO MACHADO */}
-            <div className={`absolute top-40 left-8 md:left-12 z-30 ${nameVisible ? 'animate-slide-in-2' : ''}`}>
-                <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold italic tracking-tighter leading-tight select-none">
-                    BERNARDO
-                    <br />
-                    MACHADO
-                </h1>
-            </div>
+            {/* Center - Statue Image */}
+            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-20 ${imageVisible ? 'animate-fade-scale' : ''}`}>
+                <Image 
+                    unoptimized
+                    src="/images/statue_back.gif" 
+                    alt="Statue Back"
+                    width={360}
+                    height={339}
+                    className="object-contain w-auto h-[60vh] max-h-[60vh] opacity-50 sm:h-[70vh] sm:max-h-[70vh] sm:opacity-70 md:max-h-[85vh] md:h-screen md:opacity-100 lg:max-h-[90vh]"
+                    priority
+                />
             </div>
 
-            {/* Right - Text + Button */}
-            <div className={`absolute top-1/4 right-12 lg:right-24 xl:right-32 w-64 md:w-72 lg:w-80 z-30 text-left${nameVisible ? 'animate-slide-in-3' : ''}`}>
-                <p className="text-sm md:text-base leading-relaxed mb-8 whitespace-pre-line">
+            {/* Text + Button - Mobile: sobreposto à imagem / md+: direita da imagem */}
+            <div className={`absolute top-1/3 left-1/2 -translate-x-1/2 w-[85%] max-w-xs z-30 text-center px-4 sm:max-w-sm md:top-1/4 md:left-auto md:right-8 md:translate-x-0 md:w-56 md:text-left md:px-0 lg:right-12 lg:w-64 xl:right-24 xl:w-72 2xl:right-32 2xl:w-80 ${nameVisible ? 'animate-slide-in-3' : ''}`}>
+                <p className="text-xs leading-relaxed mb-6 whitespace-pre-line text-white/90 sm:text-sm md:text-base lg:mb-8 lg:text-white">
                     {baseText}
                     {expanded && <span className="animate-fade-in">{extraText}</span>}
                 </p>
@@ -70,50 +85,15 @@ export default function About(){
                 />
             </div>
 
-            {/* Center - Statue Image (positioned at bottom center) */}
-            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-20 ${imageVisible ? 'animate-fade-scale' : ''}`}>
-                <Image 
-                    unoptimized
-                    src="/images/statue_back.gif" 
-                    alt="Statue Back"
-                    width={360}
-                    height={339}
-                    className="object-contain w-auto h-screen max-h-[85vh] md:max-h-[90vh]"
-                    priority
-                />
-            </div>
-
-            {/* Marquee - full width at bottom, in front of statue */}
-            <div className="absolute bottom-[5%] left-0 w-full z-40 select-none pointer-events-none">
+            {/* Marquee - full width at bottom */}
+            <div className="absolute bottom-[3%] left-0 w-full z-40 select-none pointer-events-none sm:bottom-[5%]">
                 <div className="animate-marquee whitespace-nowrap flex w-max">
                     {Array.from({ length: 6 }).map((_, index) => (
-                        <span key={index} className="text-[6.75rem] md:text-[7rem] lg:text-[8rem] font-normal italic tracking-tighter ">
-                            
+                        <span key={index} className="text-[3.5rem] font-normal italic tracking-tighter sm:text-[5rem] md:text-[6.75rem] lg:text-[7rem] xl:text-[8rem]">
                             <span className="text-outline-purple-solid">PROBLEM</span>
                             <span className="text-white">&nbsp;SOLVER&nbsp;</span> 
-                        
                         </span>
                     ))}
-
-                    {/* Opção alternativa sem JavaScript (mantida como referência pra registro): */}
-                    {/**
-                    <span className="text-[6.75rem] md:text-[7rem] lg:text-[9rem] font-normal italic tracking-tighter mx-8">
-                        <span className="text-outline-purple-solid">PROBLEM</span>
-                        <span className="text-white">&nbsp;SOLVER&nbsp;</span>
-                    </span>
-                    <span className="text-[6.75rem] md:text-[7rem] lg:text-[9rem] font-normal italic tracking-tighter mx-8">
-                        <span className="text-outline-purple-solid">PROBLEM</span>
-                        <span className="text-white">&nbsp;SOLVER&nbsp;</span>
-                    </span>
-                    <span className="text-[6.75rem] md:text-[7rem] lg:text-[9rem] font-normal italic tracking-tighter mx-8">
-                        <span className="text-outline-purple-solid">PROBLEM</span>
-                        <span className="text-white">&nbsp;SOLVER&nbsp;</span>
-                    </span>
-                    <span className="text-[6.75rem] md:text-[7rem] lg:text-[9rem] font-normal italic tracking-tighter mx-8">
-                        <span className="text-outline-purple-solid">PROBLEM</span>
-                        <span className="text-white">&nbsp;SOLVER&nbsp;</span>
-                    </span>
-                    */}
                 </div>
             </div>
         </section>

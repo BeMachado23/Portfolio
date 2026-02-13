@@ -71,7 +71,7 @@ export default function Contact() {
             {/* Title */}
             <div className={`absolute top-20 left-1/2 -translate-x-1/2 text-center ${nameVisible ? "animate-fade-scale" : "opacity-0"}`}>
                 <h2>
-                    <span className="text-neutral-400 text-2xl md:text-3xl italic font-bold tracking-wide block mb-2">LET'S</span>
+                    <span className="text-neutral-400 text-2xl md:text-3xl italic font-bold tracking-wide block mb-2">LET´S</span>
                     <span className="text-[#966DCE] text-4xl md:text-5xl font-bold tracking-tight text-shadow-white block">CONNECT</span>
                 </h2>
             </div>
