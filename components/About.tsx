@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
+import { ArrowUpRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 export default function About(){
@@ -61,28 +61,32 @@ export default function About(){
             </div>
 
             {/* Center - Statue Image */}
-            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-20 ${imageVisible ? 'animate-fade-scale' : ''}`}>
+            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[100vw] h-[65vh] sm:w-auto sm:h-[60vh] md:h-[75vh] lg:h-[85vh] ${imageVisible ? 'animate-fade-scale' : ''}`}>
                 <Image 
                     unoptimized
                     src="/images/statue_back.gif" 
                     alt="Statue Back"
-                    width={360}
-                    height={339}
-                    className="object-contain w-auto h-[60vh] max-h-[60vh] opacity-50 sm:h-[70vh] sm:max-h-[70vh] sm:opacity-70 md:max-h-[85vh] md:h-screen md:opacity-100 lg:max-h-[90vh]"
+                    fill
+                    className="object-contain object-bottom opacity-40 sm:opacity-60 md:opacity-100"
                     priority
                 />
             </div>
 
             {/* Text + Button - Mobile: sobreposto à imagem / md+: direita da imagem */}
-            <div className={`absolute top-1/3 left-1/2 -translate-x-1/2 w-[85%] max-w-xs z-30 text-center px-4 sm:max-w-sm md:top-1/4 md:left-auto md:right-8 md:translate-x-0 md:w-56 md:text-left md:px-0 lg:right-12 lg:w-64 xl:right-24 xl:w-72 2xl:right-32 2xl:w-80 ${nameVisible ? 'animate-slide-in-3' : ''}`}>
-                <p className="text-xs leading-relaxed mb-6 whitespace-pre-line text-white/90 sm:text-sm md:text-base lg:mb-8 lg:text-white">
+            <div className={`absolute top-1/3 left-1/2 -translate-x-1/2 w-[85%] max-w-xs z-30 text-center px-4 sm:max-w-sm md:top-1/4 md:left-auto md:right-8 md:translate-x-7 md:w-56 md:text-left md:px-0 lg:right-12 lg:w-64 xl:right-24 xl:w-72 2xl:right-32 2xl:w-80 ${nameVisible ? 'animate-slide-in-3' : ''}`}>
+                <p className="text-xs leading-relaxed mb-6 whitespace-pre-line text-white/90 sm:text-sm md:text-small lg:mb-8 lg:text-white">
                     {baseText}
                     {expanded && <span className="animate-fade-in">{extraText}</span>}
                 </p>
-                <Button
-                  text={expanded ? "Read less" : "Read more"}
+
+                <button 
                   onClick={() => setExpanded((prev) => !prev)}
-                />
+                  className="group inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-white bg-[#1a1a1a] border border-[#966DCE] rounded-xl cursor-pointer transition-all duration-200 md:gap-2 md:px-3 md:py-1.5 md:text-sm hover:bg-[#966DCE]/20 hover:shadow-[0_0_16px_rgba(150,109,206,0.5)]"
+                >
+                  <span>{expanded ? "Read less" : "Read more"}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#966DCE] transition-transform duration-200 md:w-4 md:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+
             </div>
 
             {/* Marquee - full width at bottom */}
