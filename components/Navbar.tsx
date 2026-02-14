@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-500 sm:px-6 sm:py-6 md:px-8 md:py-8 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-4 py-2 transition-all duration-500 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-black/40 backdrop-blur-md border-b border-white/5 ${
         isHidden ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0"
       }`}
     >

@@ -61,7 +61,7 @@ export default function About(){
             </div>
 
             {/* Center - Statue Image */}
-            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[100vw] h-[65vh] sm:w-auto sm:h-[60vh] md:h-[75vh] lg:h-[85vh] ${imageVisible ? 'animate-fade-scale' : ''}`}>
+            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[100vw] h-[65vh] sm:w-[80vw] sm:h-[60vh] md:w-[60vw] md:h-[75vh] lg:w-[50vw] lg:h-[85vh] pointer-events-none ${imageVisible ? 'animate-fade-scale' : ''}`}>
                 <Image 
                     unoptimized
                     src="/images/statue_back.gif" 
