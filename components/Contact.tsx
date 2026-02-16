@@ -67,24 +67,24 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" ref={sectionRef} className="relative w-full min-h-screen overflow-hidden py-20">
+        <section id="contact" ref={sectionRef} className="relative w-full min-h-screen overflow-hidden py-16 sm:py-20">
             {/* Title */}
-            <div className={`absolute top-20 left-1/2 -translate-x-1/2 text-center ${nameVisible ? "animate-fade-scale" : "opacity-0"}`}>
+            <div className={`relative md:absolute md:top-20 xl:top-24 2xl:top-28 md:left-1/2 md:-translate-x-1/2 text-center mb-8 md:mb-0 ${nameVisible ? "animate-fade-scale" : "opacity-0"}`}>
                 <h2>
-                    <span className="text-neutral-400 text-2xl md:text-3xl italic font-bold tracking-wide block mb-2">LET´S</span>
-                    <span className="text-[#966DCE] text-4xl md:text-5xl font-bold tracking-tight text-shadow-white block">CONNECT</span>
+                    <span className="text-neutral-400 text-xl sm:text-2xl md:text-xl xl:text-2xl 2xl:text-3xl italic font-bold tracking-wide block mb-1 xl:mb-2">LET´S</span>
+                    <span className="text-[#966DCE] text-3xl sm:text-4xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold tracking-tight text-shadow-white block">CONNECT</span>
                 </h2>
             </div>
 
-            {/* GIF Image - Left side */}
-            <div className="absolute left-0 bottom-0">
+            {/* GIF Image - Left side - Hidden on mobile */}
+            <div className="hidden md:block absolute left-0 bottom-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Contact.gif" alt="Contact Glitch Art" width={640} height={876} className="object-contain" />
+                <img src="/images/Contact.gif" alt="Contact Glitch Art" className="object-contain w-[280px] lg:w-[420px] xl:w-[450px] 2xl:w-[640px] h-auto" />
             </div>
 
-            {/* Form - Right side */}
-            <div className={`absolute right-12 lg:right-24 xl:right-102 top-1/2 -translate-y-1/3 w-full max-w-lg ${nameVisible ? "animate-slide-from-right" : "opacity-0"}`}>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+            {/* Form - Centered on mobile, Right side on desktop */}
+            <div className={`relative md:absolute px-6 sm:px-8 md:px-0 md:right-8 lg:right-16 xl:right-24 2xl:right-48 md:top-1/2 md:-translate-y-1/3 w-full max-w-md mx-auto md:mx-0 md:max-w-sm xl:max-w-md 2xl:max-w-2xl ${nameVisible ? "animate-slide-from-right" : "opacity-0"}`}>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5 xl:gap-6 2xl:gap-10">
                     {/* Name Input */}
                     <div className="relative">
                         <input
@@ -94,7 +94,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="YOUR NAME"
                             required
-                            className="w-full bg-transparent border-b-4 rounded border-[#966DCE] text-white py-3 text-sm tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors"
+                            className="w-full bg-transparent border-b-2 md:border-b-3 2xl:border-b-4 rounded border-[#966DCE] text-white py-2 md:py-2.5 2xl:py-4 text-xs md:text-sm 2xl:text-base tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors"
                         />
                     </div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="YOUR EMAIL ADDRESS"
                             required
-                            className="w-full bg-transparent border-b-4 rounded border-[#966DCE] text-white py-3 text-sm tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors"
+                            className="w-full bg-transparent border-b-2 md:border-b-3 2xl:border-b-4 rounded border-[#966DCE] text-white py-2 md:py-2.5 2xl:py-4 text-xs md:text-sm 2xl:text-base tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors"
                         />
                     </div>
 
@@ -119,8 +119,8 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="WHAT CAN I HELP FOR YOU?"
                             required
-                            rows={6}
-                            className="w-full bg-transparent border-b-4 rounded border-[#966DCE] text-white py-3 text-sm tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors resize-none"
+                            rows={4}
+                            className="w-full bg-transparent border-b-2 md:border-b-3 2xl:border-b-4 rounded border-[#966DCE] text-white py-2 md:py-2.5 2xl:py-4 text-xs md:text-sm 2xl:text-base tracking-wider placeholder:text-neutral-500 focus:outline-none focus:border-[#c9b3e8] transition-colors resize-none 2xl:rows-6"
                         />
                     </div>
 
@@ -128,7 +128,7 @@ export default function Contact() {
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="w-full py-4 mt-4 border-2 border-[#966DCE] rounded-full text-white font-semibold tracking-wider hover:bg-[#966DCE]/20 hover:border-[#966DCE] transition-all duration-300 disabled:opacity-50"
+                        className="w-full py-2.5 md:py-3 2xl:py-5 mt-2 md:mt-3 2xl:mt-6 border-2 border-[#966DCE] rounded-full text-white text-sm md:text-base 2xl:text-lg font-semibold tracking-wider hover:bg-[#966DCE]/20 hover:border-[#966DCE] transition-all duration-300 disabled:opacity-50"
                     >
                         {status === "loading" ? "SENDING..." : "SEND"}
                     </button>
@@ -144,16 +144,16 @@ export default function Contact() {
             </div>
 
             {/* Footer - Social Media & Copyright */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                <p className="text-neutral-400 text-sm font-bold italic tracking-wider mb-3">SOCIAL MEDIAS</p>
-                <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 md:bottom-8 text-center">
+                <p className="text-neutral-400 text-xs sm:text-sm font-bold italic tracking-wider mb-3">SOCIAL MEDIAS</p>
+                <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
                     <a
                         href="https://www.linkedin.com/in/bernardo-machado-80749a231/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:opacity-70 transition-opacity"
                     >
-                        <Image src="/images/linkedin_logo.png" alt="LinkedIn" width={32} height={32} />
+                        <Image src="/images/linkedin_logo.png" alt="LinkedIn" width={28} height={28} className="md:w-6 md:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
                     </a>
                     <a
                         href="https://github.com/BeMachado23"
@@ -161,7 +161,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="hover:opacity-70 transition-opacity"
                     >
-                        <Image src="/images/github_logo.png" alt="GitHub" width={32} height={32} />
+                        <Image src="/images/github_logo.png" alt="GitHub" width={28} height={28} className="md:w-6 md:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
                     </a>
                     <a
                         href="https://wa.me/5548984637448"
@@ -169,7 +169,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="hover:opacity-70 transition-opacity"
                     >
-                        <Image src="/images/whatsapp.png" alt="WhatsApp" width={32} height={32} />
+                        <Image src="/images/whatsapp.png" alt="WhatsApp" width={28} height={28} className="md:w-6 md:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
                     </a>
                     <a
                         href="https://mail.google.com/mail/?view=cm&to=bemachado.floripa@gmail.com"
@@ -177,7 +177,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="hover:opacity-70 transition-opacity"
                     >
-                        <Image src="/images/gmail.png" alt="Gmail" width={32} height={32} />
+                        <Image src="/images/gmail.png" alt="Gmail" width={28} height={28} className="md:w-6 md:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
                     </a>
                 </div>
                 <p className="text-neutral-500 text-xs">@Bernardo Machado 2025</p>

@@ -13,12 +13,12 @@ const tabs: { id: ShowcaseTab; label: string }[] = [
 
 export default function ShowcaseTabs({ activeTab, onTabChange }: ShowcaseTabsProps) {
   return (
-    <div className="flex items-center justify-center gap-8 md:gap-66">
+    <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10 lg:gap-16 xl:gap-32 2xl:gap-66">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           onClick={() => onTabChange(tab.id)}
-          className={`relative text-xl md:text-2xl lg:text-5xl font-bold italic tracking-tighter transition-colors ${
+          className={`relative text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-bold italic tracking-tighter transition-colors ${
             activeTab === tab.id
               ? "text-white"
               : "text-neutral-600 hover:text-neutral-400"

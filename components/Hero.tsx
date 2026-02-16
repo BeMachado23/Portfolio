@@ -1,11 +1,30 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Hero() {
-  const handleArrowClick = () => {
-    document.body.style.overflowY = "auto";
-  };
+  // Libera o scroll quando a seção About estiver visível
+  useEffect(() => {
+    const aboutSection = document.getElementById("about");
+    if (!aboutSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          document.body.style.overflowY = "auto";
+          observer.disconnect(); // Para de observar após liberar
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(aboutSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section id="start" className="relative h-screen w-full bg-black overflow-hidden">
@@ -41,7 +60,6 @@ export default function Hero() {
         <a 
           href="#about" 
           aria-label="Scroll to About section"
-          onClick={handleArrowClick}
           className="flex items-center justify-center w-[50px] h-[50px] rounded-full border-[2px] border-[#966DCE] hover:border-[#966DCE] hover:bg-[#966DCE]/10 transition-colors duration-300 cursor-pointer sm:w-[60px] sm:h-[60px] lg:w-[70px] lg:h-[70px]"
         >
           <ChevronDown className="text-[#966DCE] w-[3rem] h-[3rem] sm:w-[4rem] sm:h-[4rem] lg:w-[6rem] lg:h-[6rem]" strokeWidth={2.3}/>

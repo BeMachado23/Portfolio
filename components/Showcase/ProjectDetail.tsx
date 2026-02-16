@@ -162,28 +162,28 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
               </div>
 
               {/* Key Features */}
-              <div className="relative flex animate-slide-from-bottom w-[450px] mx-auto py-6 min-h-[280px]">
+              <div className="relative flex animate-slide-from-bottom w-full max-w-[450px] mx-auto py-6 min-h-[280px]">
                 {/* Left purple bar */}
-                <div className="w-1 bg-[#966DCE] rounded-full mr-6 h-[380px]" />
+                <div className="w-1 bg-[#966DCE] rounded-full mr-3 sm:mr-4 md:mr-6 h-auto" />
                 
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-6 mt-4">
-                    <Wrench className="w-5 h-5 text-[#966DCE]" />
-                    <h3 className="text-white text-lg font-semibold">Key Features</h3>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-4 sm:mb-6 mt-4">
+                    <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-[#966DCE]" />
+                    <h3 className="text-white text-base sm:text-lg font-semibold">Key Features</h3>
                   </div>
                   
-                  <ul className="space-y-4">
+                  <ul className="space-y-3 sm:space-y-4">
                     {project.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                      <li key={index} className="flex items-start gap-2 sm:gap-3">
                         <span className="text-white ">•</span>
-                        <span className="text-neutral-300 text-sm leading-relaxed">{feature}</span>
+                        <span className="text-neutral-300 text-xs sm:text-sm leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Right purple bar */}
-                <div className="w-1 bg-[#966DCE] rounded-full ml-6 h-[380px]" />
+                <div className="w-1 bg-[#966DCE] rounded-full ml-3 sm:ml-4 md:ml-6 h-auto" />
               </div>
             </div>
           </div>
