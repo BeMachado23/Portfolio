@@ -78,6 +78,32 @@ export const projects: Project[] = [
   },
   {
     id: "proj-2",
+    title: "CRUD-Estoque",
+    description: "Este projeto foi desenvolvido originalmente como um desafio técnico de conhecimento focado no desenvolvimento de um sistema de gestão de",
+    image: "/images/projects/CRUD.png",
+    tags: ["Pagination", "Stack Flex", "Fullstack", "CRUD"],
+    slug: "project-in-bio",
+    fullDescription: "Este projeto foi desenvolvido originalmente como um desafio técnico de conhecimento focado no desenvolvimento de um sistema de gestão de estoque. A implementação inicial utilizou Java para a API e Next.js para o frontend, aproveitando minha base nessas tecnologias para entregar um CRUD funcional e bem estruturado. Após a primeira versão, o foco mudou para a experiência do utilizador e performance, resultando na implementação de validações rigorosas de campos, uma interface mais intuitiva com tabelas formatadas e a integração de um sistema de scroll infinito para otimizar o carregamento de dados.\n\nA etapa seguinte exigiu uma mudança completa de stack para testar a minha adaptabilidade. O backend foi inteiramente reescrito em C# utilizando .NET 10 para se integrar ao frontend existente e, posteriormente, toda a interface foi migrada para Angular 18+. Como eu não havia trabalhado com C# ou Angular anteriormente, essa transição representou um salto significativo na minha curva de aprendizagem e autonomia técnica.\n\nEssa experiência foi fundamental para consolidar a minha resiliência profissional. Mais do que aprender novos frameworks, o processo simulou a dinâmica real do mercado de trabalho, onde a capacidade de se adaptar a diferentes tecnologias e resolver problemas sob procura é mais importante do que o domínio de uma ferramenta específica. O resultado final é uma aplicação robusta que demonstra versatilidade tanto no ecossistema Java/React quanto no .NET/Angular.",
+    githubUrl: "https://github.com/BeMachado23/CRUD-Estoque",
+    technologies: [
+      { name: "Java", icon: "/images/tech/Java.png" },
+      { name: "Spring Boot", icon: "/images/tech/SpringBoot.png" },
+      { name: "C#", icon: "/images/tech/Csharp.png" },
+      { name: "Angular", icon: "/images/tech/Angular.png" },
+
+    ],
+    features: [
+      "Operações CRUD completas com suporte a múltiplas stacks de backend (Java/Spring Boot e C#/.NET 10).",
+      "Paginação dinâmica via Infinite Scroll para otimização de performance e fluidez na navegação.",
+      "Validação robusta de campos e integridade de dados tanto no frontend quanto no backend.",
+      "Implementação do padrão DTO (Data Transfer Object) para garantir a segurança e o desacoplamento das camadas.",
+      "Arquitetura escalável baseada em serviços, permitindo a fácil migração entre diferentes ecossistemas tecnológicos."
+    ],
+    projectMedia: "/images/projects/CRUD.mp4",
+    mediaType: "video",
+  },
+  {
+    id: "proj-3",
     title: "API Restful - 2025",
     description: "Para consolidar meus conhecimentos em desenvolvimento backend com Java, precisei criar uma aplicação que simulasse um cenário",
     image: "/images/projects/RestAPI.png",
@@ -98,7 +124,7 @@ export const projects: Project[] = [
     projectMedia: "/images/projects/RestAPI.png",
   },
   {
-    id: "proj-3",
+    id: "proj-4",
     title: "Carinha - 2025",
     description: "Durante o HackAIthon da Intelbras na UniSenai, identificamos que clientes e parceiros muitas vezes tinham dificuldade",
     image: "/images/projects/Carinha.png",
@@ -121,7 +147,7 @@ export const projects: Project[] = [
     projectMedia: "/images/projects/Carinha.png",
   },
   {
-    id: "proj-4",
+    id: "proj-5",
     title: "Cantina Go - SA 2023",
     description: "Durante o terceiro ano do ensino médio, minha equipe e eu identificamos um problema recorre...",
     image: "/images/projects/CantinaGo.png",
@@ -146,7 +172,7 @@ export const projects: Project[] = [
     mediaType: "video",
   },
   {
-    id: "proj-5",
+    id: "proj-6",
     title: "Tareffy - SA 2025",
     description: "Uma indústria de cortes a laser enfrentava problemas graves de organização interna e falhas de comunicação entre...",
     image: "/images/projects/Tareffy.png",
