@@ -10,8 +10,8 @@ export default function About(){
     const [nameVisible, setNameVisible] = useState(false);
     const sectionRef = useRef<HTMLElement | null>(null);
 
-    const baseText = "Olá! Sou estudante de Analise e Desenvolvimento de Sistemas, busco oportunidade desafiadoras para aplicar o que aprendi e crescer como desenvolvedor. ";
-    const extraText = "\n\nTenho interesse em desenvolvimento web, analise de dados e inteligencia artificial. Sou dedicado, curioso e sempre disposto a aprender novas tecnologias. \n\nEstou animado para contribuir com projetos reais e evoluir profissionalmente.";
+    const baseText = "Olá! Sou engenheiro de software, com foco na criação e evolução de sistemas web.";
+    const extraText = "\n\nTrabalho com desenvolvimento web (frontend e backend) e manutenção de sistemas, com interesse em analise de dados e inteligencia artificial. \n\nSou dedicado, curioso e sempre disposto a aprender novas tecnologias.";
 
     useEffect(() => {
         const element = sectionRef.current;
